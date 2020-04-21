@@ -1,7 +1,7 @@
 {
   "name": "@kristoferbaxter/estree-walker",
   "description": "Traverse an ESTree-compliant AST",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": false,
   "author": "Rich Harris",
   "license": "MIT",
@@ -39,6 +39,6 @@
   },
   "mocha": {
     "require": "sucrase/register",
-    "spec": "test/test.ts" 
+    "spec": "test/test.ts"
   }
 }
