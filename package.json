@@ -1,5 +1,5 @@
 {
-  "name": "estree-walker",
+  "name": "@kristoferbaxter/estree-walker",
   "description": "Traverse an ESTree-compliant AST",
   "version": "2.0.1",
   "private": false,
@@ -7,27 +7,38 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rich-Harris/estree-walker"
+    "url": "https://github.com/kristoferbaxter/estree-walker"
   },
   "main": "dist/estree-walker.umd.js",
-  "module": "src/estree-walker.js",
+  "module": "src/estree-walker.mjs",
   "types": "types/index.d.ts",
   "scripts": {
-    "prepublishOnly": "npm run build && npm test",
+    "prepublishOnly": "yarn build && yarn test",
     "build": "tsc && rollup -c",
-    "test": "mocha --opts mocha.opts"
+    "test": "mocha"
   },
   "devDependencies": {
-    "@types/estree": "0.0.42",
-    "mocha": "^5.2.0",
-    "rollup": "^0.67.3",
-    "rollup-plugin-sucrase": "^2.1.0",
-    "typescript": "^3.7.5"
+    "@types/estree": "0.0.44",
+    "mocha": "7.1.1",
+    "rollup": "2.7.1",
+    "rollup-plugin-sucrase": "2.1.0",
+    "typescript": "3.8.3"
   },
   "files": [
     "src",
     "dist",
     "types",
     "README.md"
-  ]
+  ],
+  "exports": {
+    ".": "./src/estree-walker.mjs"
+  },
+  "volta": {
+    "node": "14.0.0",
+    "yarn": "1.22.4"
+  },
+  "mocha": {
+    "require": "sucrase/register",
+    "spec": "test/test.ts" 
+  }
 }
